@@ -34,7 +34,6 @@ int main()
 			getline(cin, userInput);
 		} 
 		calculateAverage();
-		cout << "The average of your numbers is ";
-		cout << numberAverage;
+		cout << "The average of your numbers is " << numberAverage;
 		return 0;
 }
