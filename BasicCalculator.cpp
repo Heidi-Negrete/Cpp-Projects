@@ -28,5 +28,12 @@ void calculateOperation(double x, double y, char opChar) {
 
 int main()
 {
+	double firstDouble{ getDouble() };
+	double secondDouble{ getDouble() };
 
+	char userOperator{ getOperator() };
+
+	calculateOperation(firstDouble, secondDouble, userOperator);
+
+	return 0;
 }
