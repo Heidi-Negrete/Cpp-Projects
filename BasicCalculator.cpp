@@ -15,6 +15,17 @@ char getOperator() {
 	return userOperator;
 }
 
+void calculateOperation(double x, double y, char opChar) {
+	if (opChar == '-')
+		std::cout << x - y << "\n";
+	else if (opChar == '+')
+		std::cout << x + y << "\n";
+	else if (opChar == '*')
+		std::cout << x * y << "\n";
+	else if (opChar == '/')
+		std::cout << x / y << "\n";
+}
+
 int main()
 {
 
