@@ -2,7 +2,12 @@
 
 #include <iostream>
 
+bool isEven(int x) {
+    return (x % 2) == 0;
+}
+
+
 int main()
 {
-    std::cout << "Enter a number. ";
+    std::cout << "Enter an integer. ";
 }
