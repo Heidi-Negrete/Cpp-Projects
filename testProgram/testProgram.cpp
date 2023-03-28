@@ -40,11 +40,22 @@ public:
 			std::cout << i << " " << m_arr[i] << "\n";
 		}
 	}
+
+	const T& operator [] (size_t index) const
+	{
+		return m_arr[index];
+	}
+
+	T& operator [] (size_t index)
+	{
+		return m_arr[index];
+	}
 };
 int main()
 {
 	DynamicArray<int> myArray(10);
 	myArray.set(4, 7);
+	myArray[4] = 9;
 	myArray.print();
 	return 0;
 }
