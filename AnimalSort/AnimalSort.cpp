@@ -57,15 +57,25 @@ public:
 			a.print();
 		}
 	}
+
+	void loadFromFile(const std::string& filename)
+	{
+		std::ifstream fin(filename);
+		std::string type, name;
+		int birthyear;
+
+		while (fin >> type)
+		{
+			fin >> name >> birthyear;
+			addAnimal(Animal(type, name, birthyear));
+		}
+	}
 };
 
 int main()
 {
 	Zoo bethanyZoo("Bethany", 120);
-	const Animal zebra1("Zebra", "Nay", 2021);
-	bethanyZoo.addAnimal(zebra1);
-	bethanyZoo.addAnimal(Animal("Zebra", "No", 2020));
-	//zebra1.print();
+	bethanyZoo.loadFromFile("animals.txt");
 	bethanyZoo.print();
 
 	return 0;
