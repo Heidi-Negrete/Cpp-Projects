@@ -1,22 +1,23 @@
 #include <iostream>
 
 // RAII.
-class IntArray
+template <typename T>
+class DynamicArray
 {
 	size_t	m_size;
-	int*	m_arr;
+	T*	m_arr;
 
 public:
 	// constructor acquires the resource
-	IntArray(size_t size)
+	DynamicArray(size_t size)
 		: m_size(size)
-		, m_arr (new int[size])
+		, m_arr (new T[size])
 	{
 		std::cout << "Array Constructor\n";
 	}
 
 	// destructor deallocates the resource
-	~IntArray()
+	~DynamicArray()
 	{
 		delete[] m_arr;
 		std::cout << "Array Destructor";
@@ -42,7 +43,8 @@ public:
 };
 int main()
 {
-	IntArray myArray(10);
+	DynamicArray<int> myArray(10);
+	myArray.set(4, 7);
 	myArray.print();
 	return 0;
 }
